@@ -1,0 +1,80 @@
+<html>
+	<head>
+		<title>Prüfziffer berechnen</title>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		<script>
+			"use strict";
+            //berechnug Prfüffsumme 
+            function rechne (){
+                var vZ1;
+                var vZ2;
+                var vZ3;
+                var vZ4;
+                var vZ5;
+                var vZ6;
+                var vZ7;
+                var vZ8;
+                var vZ9;
+                var vZ10;
+                var vZ11;
+                var vZ12;
+                var vPruefsumme;
+                var vPruefziffer;
+                var vAusgabeHtml;
+
+                vZ1=parseFloat(document.getElementById("idZ1").value);
+                vZ2=parseFloat(document.getElementById("idZ2").value);
+                vZ3=parseFloat(document.getElementById("idZ3").value);
+                vZ4=parseFloat(document.getElementById("idZ4").value);
+                vZ5=parseFloat(document.getElementById("idZ5").value);
+                vZ6=parseFloat(document.getElementById("idZ6").value);
+                vZ7=parseFloat(document.getElementById("idZ7").value);
+                vZ8=parseFloat(document.getElementById("idZ8").value);
+                vZ9=parseFloat(document.getElementById("idZ9").value);
+                vZ10=parseFloat(document.getElementById("idZ10").value);
+                vZ11=parseFloat(document.getElementById("idZ11").value);
+                vZ12=parseFloat(document.getElementById("idZ12").value);
+                
+                vPruefsumme=(vZ1*1)+(vZ2*3)+(vZ3*1)+(vZ4*3)+(vZ5*1)+(vZ6*3)+(vZ7*1)+(vZ8*3)+(vZ9*1)+(vZ10*3)+(vZ11*1)+(vZ12*3);
+
+                vPruefziffer=10-(vPruefsumme%10);
+				
+				if(vPruefziffer==10){
+				
+					vPruefziffer=0;               
+
+                }
+
+			
+			vAusgabeHtml= "Die Prüfsumme ist: " +vPruefsumme+ " und die Prüfziffer ist: " +vPruefziffer;
+			
+            document.getElementById("idAusgabeHtml").innerHTML=vAusgabeHtml;
+			
+                }
+
+		</script>
+</head>
+
+	<body>
+		<h1>Prüffziffer berechnen</h1>
+		Europäische Artikelnummer:
+        <input id="idZ1" type="text" maxlength="1" size="1" value="0">
+		<input id="idZ2" type="text" maxlength="1" size="1" value="0">
+		<input id="idZ3" type="text" maxlength="1" size="1" value="0">
+		<input id="idZ4" type="text" maxlength="1" size="1" value="1">
+		<input id="idZ5" type="text" maxlength="1" size="1" value="9">
+		<input id="idZ6" type="text" maxlength="1" size="1" value="6">
+		<input id="idZ7" type="text" maxlength="1" size="1" value="0">
+		<input id="idZ8" type="text" maxlength="1" size="1" value="2">
+		<input id="idZ9" type="text" maxlength="1" size="1" value="1">
+		<input id="idZ10" type="text" maxlength="1" size="1" value="1">
+		<input id="idZ11" type="text" maxlength="1" size="1" value="1">
+		<input id="idZ12" type="text" maxlength="1" size="1" value="3">
+    </br> 
+</br> 
+<button onClick="rechne();">Berechne Prüfziffer</button>
+</br> 
+</br> 
+<div id="idAusgabeHtml"></div>
+	</body>
+</html>
